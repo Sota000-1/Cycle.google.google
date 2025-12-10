@@ -1,0 +1,208 @@
+
+
+/*----------------------------------------
+  ページ全体のベーススタイル
+----------------------------------------*/
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(to bottom, #e0f2fe, #ffffff);
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/*----------------------------------------
+  ヘッダー
+----------------------------------------*/
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #38bdf8;
+  color: white;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/*----------------------------------------
+  メインコンテンツ
+----------------------------------------*/
+main {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/*----------------------------------------
+  選手切り替えコントロール
+----------------------------------------*/
+.player-controls {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.player-controls label {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+/*----------------------------------------
+  ビュー切り替えラジオボタンまわり
+----------------------------------------*/
+.controls {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.controls label {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/*----------------------------------------
+  グラフ・表用コンテナ（中央揃え） 
+----------------------------------------*/
+.data-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+/*----------------------------------------
+  グラフ（canvas）のサイズ指定
+----------------------------------------*/
+#chart-container {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+canvas {
+  width: 100% !important;
+  height: 400px !important; /* 初期サイズを固定 */
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/*----------------------------------------
+  テーブル表示まわり
+----------------------------------------*/
+#table-container {
+  display: none; /* 最初は非表示 */
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+thead {
+  background-color: #3b82f6; /* 青系ヘッダー */
+  color: white;
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb; /* 偶数行に薄いグレー */
+}
+
+tbody tr:hover {
+  background-color: #eff6ff; /* ホバー時に薄い青 */
+}
+
+/*----------------------------------------
+  結論部分
+----------------------------------------*/
+.summary {
+  margin-top: 2rem;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #38bdf8;
+}
+
+.summary h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.summary p {
+  margin: 0.5rem 0 0 0;
+  line-height: 1.6;
+}
+.statistics {
+  background: #f0f9ff;
+  border-left: 4px solid #38bdf8;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.statistics h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+
+/*----------------------------------------
+  レスポンシブ対応（極端に狭い画面での調整）
+----------------------------------------*/
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  header img {
+    margin-bottom: 0.5rem;
+  }
+  canvas {
+    height: 300px !important;
+  }
+}
