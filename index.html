@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自転車と筋力の関係性</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <img src="bicycle-svgrepo-com.svg
+" alt="Bike Icon">
+      <h1>自転車と筋力の関係性</h1>
+    </header>
+
+    <main>
+      <h2>平均時速の比較（全力 vs 持久）</h2>
+
+      <!-- ◆ 選手切り替えコントロール ◆ -->
+      <div class="player-controls">
+        <label><input type="checkbox" class="player-toggle" data-player="1" checked> 選手1</label>
+        <label><input type="checkbox" class="player-toggle" data-player="2" checked> 選手2</label>
+        <label><input type="checkbox" class="player-toggle" data-player="3" checked> 選手3</label>
+        <label><input type="checkbox" class="player-toggle" data-player="4" checked> 選手4</label>
+        <label><input type="checkbox" class="player-toggle" data-player="5" checked> 選手5</label>
+      </div>
+
+      <!-- ◆ グラフ⇔表 切り替えコントロール ◆ -->
+      <div class="controls">
+        <label>
+          <input type="radio" name="view-toggle" value="chart" id="view-chart" checked>
+          グラフ表示
+        </label>
+        <label>
+          <input type="radio" name="view-toggle" value="table" id="view-table">
+          表表示
+        </label>
+      </div>
+
+      <!-- ここから中央揃え用のコンテナ -->
+      <div class="data-container">
+        <div id="chart-container">
+          <canvas id="speedChart"></canvas>
+        </div>
+        <div id="table-container"></div>
+      </div>
+      <!-- ここまで中央揃え用のコンテナ -->
+<div class="statistics">
+  <h3>選手別統計（表示中の選手のみ）</h3>
+  <div id="player-stats"></div>
+</div>
+
+
+      <div class="summary">
+        <h3>結論と条件</h3>
+        <p>
+          平坦な道の2時間の走行では、<strong>持久的ペダリング</strong>の方が
+          <strong>全力ペダリング</strong>よりも平均時速が高くなります。<br>
+          全力ペダリングは短時間では速いものの、疲労による速度低下と回復サイクルにより、
+          長時間走行では持続的なペースを保つほうが疲れないし、早くはしることができます。今後走るときは気を付けてみてはどうでしょうか。<br>
+          データ収集日：2025年6月10日<br>データの収集方法：サイクルコンピューターによるデータを1分ごとにまとめたもの。<br>天候：晴れ<br>風：無風<br>平坦な道。坂を感じ取ることができないぐらいの道を利用。
+
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
